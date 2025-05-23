@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Te amo Aracely ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      overflow: hidden;
+      height: 100vh;
+    }
+    .falling {
+      position: absolute;
+      top: -50px;
+      color: red;
+      font-size: 24px;
+      font-family: 'Arial', sans-serif;
+      animation: fall linear infinite;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<script>
+  const frases = ["❤️ Te amo Aracely ❤️", "💖 Te amo Aracely 💖", "💕 Te amo Aracely 💕"];
+  const cantidad = 60;
+
+  for (let i = 0; i < cantidad; i++) {
+    let span = document.createElement("span");
+    span.classList.add("falling");
+    span.innerText = frases[Math.floor(Math.random() * frases.length)];
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.animationDuration = (3 + Math.random() * 5) + "s";
+    span.style.fontSize = (18 + Math.random() * 10) + "px";
+    document.body.appendChild(span);
+  }
+</script>
+</body>
+</html>
